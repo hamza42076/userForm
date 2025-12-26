@@ -1,0 +1,180 @@
+/* ===== Global Reset ===== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ===== Body Background Animation ===== */
+body {
+    background: linear-gradient(135deg, #6a11cb, #2575fc, #6a11cb);
+    background-size: 300% 300%;
+    animation: gradientMove 8s ease infinite;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ===== Container Animation ===== */
+.container,
+.confirmation-container {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    max-width: 600px;
+    padding: 30px;
+    animation: fadeSlide 1s ease forwards;
+}
+
+@keyframes fadeSlide {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== Headings ===== */
+h1 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 28px;
+    animation: pop 0.8s ease;
+}
+
+@keyframes pop {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* ===== Form Groups ===== */
+.form-group {
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* ===== Labels ===== */
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+/* ===== Inputs ===== */
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.4);
+    transform: scale(1.02);
+    outline: none;
+}
+
+/* ===== Radio & Checkbox ===== */
+.radio-group {
+    display: flex;
+    gap: 20px;
+}
+
+.radio-option,
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* ===== Buttons ===== */
+.submit-btn,
+.back-btn {
+    background: linear-gradient(to right, #3498db, #2c3e50);
+    color: white;
+    border: none;
+    padding: 14px 25px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Button Glow */
+.submit-btn::after,
+.back-btn::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    top: 0;
+    left: -100%;
+    transition: 0.4s;
+}
+
+.submit-btn:hover::after,
+.back-btn:hover::after {
+    left: 100%;
+}
+
+.submit-btn:hover,
+.back-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.submit-btn:active {
+    transform: scale(0.95);
+}
+
+/* ===== Confirmation Icon Animation ===== */
+.icon {
+    font-size: 60px;
+    margin-bottom: 20px;
+    color: #27ae60;
+    animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* ===== Confirmation Text ===== */
+.message {
+    color: #2c3e50;
+    font-size: 18px;
+    line-height: 1.6;
+}
